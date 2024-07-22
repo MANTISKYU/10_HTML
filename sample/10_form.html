@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼관련태그</title>
+</head>
+<body>
+    <h1>폼관련태그</h1>
+    <pre>
+        form 태그는 html에서 사용자가 입력할 수 있는 양식을 제공하는 태그
+        form 태그 내의 input 태그들을 통해 사용자가 입력한 정보를 서버로
+        넘기는 역할을 한다
+    </pre>
+    <form action="search">
+        <label>검색할 내용</label>
+        <input type="text">
+        <button type="submit">검색</button>
+    </form>
+    <hr>
+    <form action="test" method="get">
+        <fieldset>
+            <legend>필드셋의 제목을 작성하는 부분</legend>
+            <label>입력1 : </label><input type = "text" value="사과"><br>
+            <label>입력2 : </label><input type = "text"><br>
+            <label>입력3 : </label><input type = "text"><br>
+        </fieldset>
+        <fieldset>
+            <legend>필드셋으로 묶은 영역별로 구분 가능</legend>
+            <label>입력1 : </label><input type = "text" value="사과"><br>
+            <label>입력2 : </label><input type = "text"><br>
+            <label>입력3 : </label><input type = "text"><br>
+        </fieldset>
+        <input type="submit" value="넘기기">
+    </form>
+
+    <hr>
+    <h2>input</h2>
+    <form action="test/a">
+        <fieldset>
+            <legend>text 관련 input태그</legend>
+            <label>회원명 :</label>
+            <input type="text" name="memberName" id="memberName" placeholder="이름을 입력하세요" required>
+            <label for="memberPw">비밀번호</label>
+            <input type="password" name="memberPw" id="memberPw" part="비밀번호를 입력하세요"
+            required
+            maxlength="6">
+            <br>
+            <label for="searchKw">검색 : </label>
+            <input type="search" name="searchKw" id="searchKw">
+            <br>
+            <label>홈페이지</label>
+            <input type="url" value="https://">
+            <br>
+            <label for="memberTel">전화번호 : </label>
+            <input type="tel" name="memberTel" id="memberTel"
+            placeholder="010-1234-5678">
+
+            <label for="memberTel2">전화번호 : </label>
+            <input type="tel" name="memberTel2" id="memberTel2"
+            placeholder="010-1234-5678"
+            pattern="[0-9](3)-[0-9](4)-[0-9](4)">
+            <label for="memo">메모</label>
+            <textarea name="memo" id="memo"
+            cols="35" rows="10"></textarea>
+            <input type="submit" value="전송">
+        </fieldset>
+    </form>
+    <form action="test/b">
+        <fieldset>
+            <legend>숫자와 관련된 input 태그</legend>
+            <h3>number</h3>
+            <label>수량</label>
+            <input type="number" min="0" max="100" value="0" step="5">
+            <br>
+            <h3>type=range</h3>
+            <p>슬라이드바로 숫자를 지정할 수 있다</p>
+            <label>점수 :</label>
+            <input type="range" min="0" max="100" value="50" step="5">
+            <input type="submit" value="전송">
+        </fieldset>
+    </form>
+    <form action="test/c">
+        <fieldset>
+            <legend>날짜 및 시간 관련 input 태그</legend>
+            <label for="someday">날짜 :</label>
+            <input type="date" name="someday" id="someday"
+            value="1999-09-09">
+            <br>
+            <label for="sometime">시간 :</label>
+            <input type="time" name="sometime" id="sometime"
+            value="21:30">
+            <br>
+            <label for="when">날짜, 시간 :</label>
+            <input type="datetime-local" name="when" id="when"
+            value="1999-09-09T21:30">
+
+            <input type="submit" value="전송">
+        </fieldset>
+    </form>
+    <form action="test/d">
+        <fieldset>
+            <legend>선택 관련 input</legend>
+            <div>
+                성별:
+                <label for="gender-male">남</label>
+                <input type="radio" name="gender" id="gender-male" value="M" checked>
+                <label for="gender-female">여</label>
+                <input type="radio" name="gender" id="gender-female" value="F">
+            </div>
+            <div>
+                <label for="sms">sms 수신</label>
+                <input type="checkbox" name="sms" id="sms">
+            </div>
+            <div>
+                <input type="checkbox" name="hobby" id="hobby-game" value="game">
+                <label for=""hobby-game>게임</label>
+                <input type="checkbox" name="hobby" id="hobby-movie" value="movie">
+                <label for=""hobby-movie>영화</label>
+                <input type="checkbox" name="hobby" id="hobby-music" value="music">
+                <label for=""hobby-music>음악</label>
+            </div>
+            <select name="menu" id="menu">
+                <option value="">==메뉴 선택</option>
+                <option value="된">된장찌개</option>
+                <option value="순">순두부찌개</option>
+                <option value="김"selected>김치찌개</option>
+            </select>
+            <label for="userBrowser">브라우저선택</label>
+            <input type="text" name="userBrowser" id="userBrowser"
+            list="browsers">
+            <datalist id="browsers">
+                <option value="Edge">엣지</option>
+                <option value="Chrome">크롬</option>
+                <option value="Firefox">파이어폭스</option>
+                <br>
+            </datalist>
+            <input type="submit" value="전송">
+        </fieldset>
+
+    </form>
+    <form action="test/e">
+        <fieldset>
+            <legend>기타 input</legend>
+            <div>
+                <label for="favoriteColor">선호색상</label>
+                <input type="color" name="favoriteColor" id="favoriteColor"
+                value="#00ffcc">
+            </div>
+            <div>
+                <label for="upFile">파일선택</label>
+                <input type="file" name="upFile" id="upFile">
+            </div>
+            <div>
+                <input type="hidden" name="val" value="123">
+            </div>
+            <div>
+                <input type="text" name="name" value="deukkyu" disabled>
+            </div>
+            <input type="submit" value="전송">
+        </fieldset>
+
+
+
+    </form>
+
+</body>
+</html>
